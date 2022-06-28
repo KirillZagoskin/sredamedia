@@ -1,0 +1,242 @@
+
+<!--
+    
+    RUSSIANS AGAINST WAR
+
+-->
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Среда - медиа с улиц Ханты-Мансийска</title>
+    <link rel="icon" type="image/png" href="{% static 'icons/favicon.png' %}" />
+    <link href="{% static 'css/style.css'%}" type="text/css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="#"><img src="{% static 'icons/sreda-logo.svg' %}"/></a>
+        </div>
+        <div class="header-middle">
+            Главное за <button onclick="dropdownFunction()" class="today-button">{% block content %}сегодня{% endblock  %}<img id="arrow-down" src="{% static 'icons/arrow-down.svg' %}"/>
+            <div id="todayDropdown" class="today-dropdown-content">
+                <a href="#" class="active">сегодня</a>
+                <a href="#">неделю</a>
+                <a href="#">месяц</a>
+            </div>
+            </button>
+        </div>
+        <div class="header-right">
+             <button onclick="createFunction()" class="create-button" style="background: #F7F7F7 url('{% static 'icons/create-icon.svg' %}') no-repeat;     background-size: 16px;
+             background-position: center;"></button>
+            <div id="createDropdown" class="create-dropdown-content">
+                <a href="create-question.html">Спросить</a>
+                <a href="create-post.html">Написать</a>
+            </div>
+        </div>
+    </header>
+    <div class="subheader tab">
+        <a href="#"><button class="tablinks active">Популярное</button></a>
+        <a href="#"><button class="tablinks">Вопросы</button></a>
+        <a href="#"><button class="tablinks">Сообщества</button></a>
+    </div>
+    <main>
+        <div class="left-sidebar" id="leftSidebar">
+            <button onclick="closeSidebar()" class="left-sidebar-item sidebar-button">Close &times;</button>
+            <a href="#" class="left-sidebar-item sidebar-button">Link 1</a>
+            <a href="#" class="left-sidebar-item sidebar-button">Link 2</a>
+            <a href="#" class="left-sidebar-item sidebar-button">Link 3</a>
+        </div>
+        <div class="blog">
+            <div class="blog-post">
+                <a href="post.html" class="post-wrap">
+                    <img class="post-img" src="{% static 'pics/default-photo.jpeg' %}"/>
+                    <div class="content-type">Исследование</div>
+                    <h2 class="title">Городская карта (не)вывоза снега</h2>
+                    <div class="subtitle">Собрали карту дворов, где за три месяца не вывозили снег.</div>
+                </a>
+                <div class="published-container">
+                    <div class="img-container">
+                        <a href="#"><img class="community-img" src="{% static 'icons/community.svg' %}"/></a>
+                        <a href="user.html"><img class="author-img" src="{% static 'pics/author.png' %}"/></a>
+                    </div>
+                    <div class="publishing-info">
+                        <h3 class="written-by"><a href="#">Редакция "Среды"</a></h3>
+                        <button onclick="actionsFunction()" class=" separator post-actions-button">
+                            &#x2022;&#x2022;&#x2022;
+                            <div id="actionsDropdown" class="post-actions-content">
+                                <a href="#">Подписатсья</a>
+                                <a href="#">Пожаловаться</a>
+                            </div>
+                        </button>
+                        <div class="author-date">
+                            <div class="author"><a href="user.html">Полина Змановская</a></div>
+                            <div class="separator">&#x2022;</div>
+                            <div class="date">5 мая</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <ul>
+                        <li><a href="#">Городские службы</a></li>
+                        <li><a href="#">Cреда</a></li>
+                    </ul>
+                </div>
+                <div class="reaction-bar">
+                    <div class="interaction-container">
+                        <div class="reaction"><img src="{% static 'icons/comments-icon.svg' %}"/><div class="comment-count">2</div></div>
+                        <div class="reaction"><img src="{% static 'icons/bookmark-icon.svg' %}"></div>
+                        <div class="reaction"><img src="{% static 'icons/share-icon.svg' %}"/></div>
+                    </div>
+                    <div class="score-container">
+                        <div class="reaction score"><img src="{% static 'icons/minus-icon.svg' %}"/></div>
+                        <div class="reaction score-count positive">34</div>
+                        <div class="reaction score"><img src="{% static 'icons/plus-icon.svg' %}"/></div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-post">
+                <a href="question.html" class="question-wrap">
+                    <div class="img-wrap">
+                        <img class="post-img question-img" src="{% static 'pics/default-photo-2.jpg' %}"/>
+                        <div class="question-content overlay">
+                            <div class="question-info">
+                                <div class="content-type">Вопрос</div>
+                                <h2 class="title">Зачем нужны велодорожки?</h2>
+                                <div class="author">Кирилл Загоскин</div>
+                                <div class="tags question-tags">
+                                    <ul>
+                                        <li>Городские службы</li>
+                                        <li>Cреда</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="published-container">
+                    <div class="img-container">
+                        <a href="user.html"><img class="author-img single-author" src="{% static 'pics/author.png' %}"/></a>
+                    </div>
+                    <div class="publishing-info">
+                        <h3 class="written-by"><a href="user.html">Полина Змановская</a></h3>
+                        <div class="separator">&#x2022;&#x2022;&#x2022;</div>
+                        <div class="author-date answer-author">
+                            <div class="author"><a href="#">@polina_zman</a></div>
+                            <div class="separator">&#x2022;</div>
+                            <div class="date">5 мая</div>
+                        </div>
+                    </div>
+                    <div class="question-answer">
+                        <p>Потому, что людям на велосипедах, самокатах и прочих средствах индивидуальной мобильности просто негде ездить!... <button class="read-more">(далее)</button></p>
+                    </div>
+                </div>
+                <div class="reaction-bar">
+                    <div class="interaction-container">
+                        <div class="reaction"><img src="{% static 'icons/comments-icon.svg' %}"/><div class="comment-count">2</div></div>
+                        <div class="reaction"><img src="{% static 'icons/bookmark-icon.svg' %}"></div>
+                        <div class="reaction"><img src="{% static 'icons/share-icon.svg' %}"/></div>
+                    </div>
+                    <div class="score-container">
+                        <div class="reaction score"><img src="{% static 'icons/minus-icon.svg' %}"/></div>
+                        <div class="reaction score-count positive">21</div>
+                        <div class="reaction score"><img src="{% static 'icons/plus-icon.svg' %}"/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner unauthorized">
+            Создать аккаунт через Телеграм <button class="banner-btn">Регистрация</button>
+        </div>
+    </main>
+    <div class="navbar">
+        <ul>
+            <a href="index.html"><li><button class="nav-button" style="background-image: url('{% static 'icons/home-icon-active.svg' %}')"></button></li></a>
+            <a href="search.html"><li><button class="nav-button" style="background-image: url('{% static 'icons/search-icon.svg' %}')"></button></li></a>
+            <a href="notific.html"><li><button class="nav-button" style="background-image: url('{% static 'icons/notification-icon.svg' %}')"></button></li></a>
+            <li><button onclick="accountFunction()" class="nav-button" style="background-image: url('{% static 'icons/user-icon.svg' %}')">
+                <div id="accountDropdown" class="account-dropdown-content">
+                    <a href="#">Закладки</a>
+                    <a href="#">Публикации</a>
+                    <a href="#">Выйти</a>
+                </div>
+            </button></li>
+        </ul>
+    </div>
+
+<script>
+    function createFunction() {
+        document.getElementById("createDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.create-button')) {
+        var dropdowns = document.getElementsByClassName("create-dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            }
+        }
+        }
+    }
+
+    function dropdownFunction() {
+        document.getElementById("todayDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.today-button')) {
+        var dropdowns = document.getElementsByClassName("today-dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            }
+        }
+        }
+    }
+
+    function accountFunction() {
+        document.getElementById("accountDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.nav-button')) {
+        var dropdowns = document.getElementsByClassName("account-dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            }
+        }
+        }
+    }
+
+    function actionsFunction() {
+        document.getElementById("actionsDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.post-actions-button')) {
+        var dropdowns = document.getElementsByClassName("post-actions-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            }
+        }
+        }
+    }
+</script>
+</body>
+</html>
