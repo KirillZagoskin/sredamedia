@@ -1,0 +1,32 @@
+.blog {
+    padding-top: 0;
+}
+
+.img-wrap.open-question {
+    margin: 0 -15px;
+    width: 100vw;
+}
+
+.question-content.overlay {
+    margin: 0;
+    width: 100vw;
+}
+
+.question-img {
+    margin: 0;
+}
+
+.new-answer {
+    display: none;
+}
+
+.new-answer.no-answer {
+    display: block;
+}
+
+@media screen and (min-width: 541px) {
+    .question-img, .question-content.overlay, .img-wrap.open-question {
+        width: 100%;
+        margin: 0;
+    }
+}

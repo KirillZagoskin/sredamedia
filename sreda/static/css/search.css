@@ -1,0 +1,39 @@
+header {
+    border-bottom: unset;
+}
+
+.search-area {
+    margin: 0 15px;
+    padding-top: 2px;
+}
+
+.search-field {
+    border-radius: 5px;
+    border: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    width: 100%;
+    padding: 10px 12px;
+    background-size: 16px;
+    border: #0C783A solid 1.5px;
+}
+
+.search-field:focus {
+    outline: #0C783A solid 1px;
+}
+
+.promotion-container {
+    padding-top: 10px;
+}
+
+.promotion-container .tags ul {
+    margin-top: unset;
+}
+
+@media screen and (min-width: 541px) {
+    .search-area {
+        margin: 0 25%;
+    }
+}
